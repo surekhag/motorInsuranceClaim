@@ -19,7 +19,7 @@ const App =()=> {
         <Route path="/details" element={<CarDetails />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/submission" element={<ClaimSubmission />} />
+        <Route path="/claimSubmission" element={<ClaimSubmission />} />
       </Routes>
     </BrowserRouter>
   );
