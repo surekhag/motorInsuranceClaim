@@ -1,7 +1,7 @@
 import React from "react";
 
-const Rejectoffer  = ()=> {
+const RejectOffer  = ()=> {
     return(<>Rejectoffer Page</>)
 };
 
-export default Rejectoffer;
+export default RejectOffer;

@@ -1,7 +1,15 @@
-import React from "react";
 
-const PolicyDetails  = ()=> {
-    return(<>PolicyDetails Page</>)
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+const PolicyDetails = () => {
+    const navigate = useNavigate();
+    return (
+        <div>
+            <h2>PolicyDetails Page</h2>
+            <button onClick={() => navigate('/policy-form')}>Fill Details & Submit</button>
+        </div>
+    );
 };
 
 export default PolicyDetails;
