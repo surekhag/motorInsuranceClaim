@@ -1,8 +1,18 @@
+
+
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PolicyForm = () => {
-    const [form, setForm] = useState({ name: "", email: "", policyNumber: "" });
-    const [submitted, setSubmitted] = useState(false);
+    const [form, setForm] = useState({
+        carName: "",
+        carLocation: "",
+        accidentDate: "",
+        accidentLocation: "",
+        description: "",
+        damageEstimate: ""
+    });
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -10,36 +20,41 @@ const PolicyForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        // Add dummy claim number
+        const claimData = { ...form, claimNumber: "CLM123456" };
+        navigate('/claimSubmission', { state: claimData });
     };
 
     return (
         <div>
-            <h2>Fill Policy Details</h2>
-            {submitted ? (
+            <h2>Car Accident Details Form</h2>
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <h3>Form Submitted!</h3>
-                    <p>Name: {form.name}</p>
-                    <p>Email: {form.email}</p>
-                    <p>Policy Number: {form.policyNumber}</p>
+                    <label>Car Name:</label>
+                    <input name="carName" value={form.carName} onChange={handleChange} required />
                 </div>
-            ) : (
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>Name:</label>
-                        <input name="name" value={form.name} onChange={handleChange} required />
-                    </div>
-                    <div>
-                        <label>Email:</label>
-                        <input name="email" value={form.email} onChange={handleChange} required />
-                    </div>
-                    <div>
-                        <label>Policy Number:</label>
-                        <input name="policyNumber" value={form.policyNumber} onChange={handleChange} required />
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            )}
+                <div>
+                    <label>Car Location:</label>
+                    <input name="carLocation" value={form.carLocation} onChange={handleChange} required />
+                </div>
+                <div>
+                    <label>Date of Accident:</label>
+                    <input type="date" name="accidentDate" value={form.accidentDate} onChange={handleChange} required />
+                </div>
+                <div>
+                    <label>Location of Accident:</label>
+                    <input name="accidentLocation" value={form.accidentLocation} onChange={handleChange} required />
+                </div>
+                <div>
+                    <label>Description of Accident:</label>
+                    <textarea name="description" value={form.description} onChange={handleChange} required />
+                </div>
+                <div>
+                    <label>Estimated Damage Cost:</label>
+                    <input type="number" name="damageEstimate" value={form.damageEstimate} onChange={handleChange} required />
+                </div>
+                <button type="submit">Submit</button>
+            </form>
         </div>
     );
 };
