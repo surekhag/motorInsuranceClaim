@@ -25,7 +25,7 @@ const App = () => (
       <Route path="/rejectOffer" element={<RejectOffer />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/claimSubmission" element={<ClaimSubmission />} />
-      <Route path="/policy-form" element={<PolicyForm />} />
+  <Route path="/policyForm" element={<PolicyForm />} />
     </Routes>
   </BrowserRouter>
 );

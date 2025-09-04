@@ -7,7 +7,7 @@ const PolicyDetails = () => {
     return (
         <div>
             <h2>PolicyDetails Page</h2>
-            <button onClick={() => navigate('/policy-form')}>Fill Details & Submit</button>
+            <button onClick={() => navigate('/policyForm')}>Fill Details & Submit</button>
         </div>
     );
 };
