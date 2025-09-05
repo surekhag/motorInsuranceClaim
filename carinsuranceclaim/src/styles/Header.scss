@@ -1,0 +1,8 @@
+/* Styles for Header component */
+@import './colors.scss';
+header {
+  background: $primary-color;
+  color: $white;
+  padding: 1rem;
+  text-align: center;
+}

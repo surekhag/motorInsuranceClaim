@@ -1,7 +1,3 @@
-import React from "react";
 
-const PolicyDetails  = ()=> {
-    return(<>PolicyDetails Page</>)
-};
 
-export default PolicyDetails;
+// This file is now replaced by Details.js. Please use Details.js for car and policy details.

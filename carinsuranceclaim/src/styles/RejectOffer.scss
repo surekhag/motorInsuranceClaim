@@ -1,0 +1,12 @@
+@import './colors.scss';
+.reject-offer__heading {
+	color: #d9534f;
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+.reject-offer__text {
+	font-size: 1.125rem;
+	color: $text-dark;
+}
+/* Styles for RejectOffer component */

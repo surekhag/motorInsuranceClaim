@@ -1,0 +1,17 @@
+@import './colors.scss';
+.footer__copyright {
+  font-size: 1rem;
+  color: $text-dark;
+  display: block;
+  text-align: center;
+}
+/* Styles for Footer component */
+@import './colors.scss';
+@import './colors.scss';
+footer {
+  background: $footer-bg;
+  color: $text-dark;
+  padding: 0.75rem;
+  text-align: center;
+  margin-top: 2.5rem;
+}
