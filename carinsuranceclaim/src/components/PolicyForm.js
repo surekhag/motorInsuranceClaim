@@ -26,31 +26,31 @@ const PolicyForm = () => {
     };
 
     return (
-        <div>
+        <div className="wrapper">
             <h2>Car Accident Details Form</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Car Name:</label>
+                    <label className="label">Car Name:</label>
                     <input name="carName" value={form.carName} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Car Location:</label>
+                    <label className="label">Car Location:</label>
                     <input name="carLocation" value={form.carLocation} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Date of Accident:</label>
+                    <label className="label">Date of Accident:</label>
                     <input type="date" name="accidentDate" value={form.accidentDate} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Location of Accident:</label>
+                    <label className="label">Location of Accident:</label>
                     <input name="accidentLocation" value={form.accidentLocation} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Description of Accident:</label>
+                    <label className="label">Description of Accident:</label>
                     <textarea name="description" value={form.description} onChange={handleChange} required />
                 </div>
                 <div>
-                    <label>Estimated Damage Cost:</label>
+                    <label className="label">Estimated Damage Cost:</label>
                     <input type="number" name="damageEstimate" value={form.damageEstimate} onChange={handleChange} required />
                 </div>
                 <button type="submit">Submit</button>

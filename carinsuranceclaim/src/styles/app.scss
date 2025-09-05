@@ -1,0 +1,41 @@
+@import './colors.scss';
+/* Label styles for all pages */
+.label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: $text-dark;
+}
+/* Wrapper for all pages */
+.wrapper {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/* Loader styles */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.loader-spinner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0.3125rem solid $loader-border;
+  border-top: 0.3125rem solid $primary-color;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-text {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: $loader-text;
+}

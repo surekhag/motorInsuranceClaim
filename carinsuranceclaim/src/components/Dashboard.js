@@ -6,25 +6,25 @@ const Dashboard = () => {
 	const location = useLocation();
 	const form = location.state || {};
 
-	return (
-		<div>
-			<h2>Dashboard</h2>
-			{form.accidentDate ? (
-				<div>
-					<h3>Accident Submission Details</h3>
-					<p><strong>Claim Number:</strong> {form.claimNumber}</p>
-					<p><strong>Car Name:</strong> {form.carName}</p>
-					<p><strong>Car Location:</strong> {form.carLocation}</p>
-					<p><strong>Date of Accident:</strong> {form.accidentDate}</p>
-					<p><strong>Location of Accident:</strong> {form.accidentLocation}</p>
-					<p><strong>Description:</strong> {form.description}</p>
-					<p><strong>Estimated Damage Cost:</strong> {form.damageEstimate}</p>
-				</div>
-			) : (
-				<p>No submission details available.</p>
-			)}
-		</div>
-	);
+		return (
+			<div className="wrapper">
+				<h2>Dashboard</h2>
+				{form.accidentDate ? (
+					<div>
+						<h3>Accident Submission Details</h3>
+						<p><span className="label">Claim Number:</span> {form.claimNumber}</p>
+						<p><span className="label">Car Name:</span> {form.carName}</p>
+						<p><span className="label">Car Location:</span> {form.carLocation}</p>
+						<p><span className="label">Date of Accident:</span> {form.accidentDate}</p>
+						<p><span className="label">Location of Accident:</span> {form.accidentLocation}</p>
+						<p><span className="label">Description:</span> {form.description}</p>
+						<p><span className="label">Estimated Damage Cost:</span> {form.damageEstimate}</p>
+					</div>
+				) : (
+					<p>No submission details available.</p>
+				)}
+			</div>
+		);
 };
 
 export default Dashboard;

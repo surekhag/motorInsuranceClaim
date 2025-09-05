@@ -7,7 +7,7 @@ import Rejectoffer from "./RejectOffer";
 const Offers = () => {
     const navigate = useNavigate();
     return (
-        <div>
+        <div className="wrapper">
             <h2>Offers Page</h2>
             <button onClick={() => navigate("/acceptOffer")}>Accept</button>
             <button onClick={() => navigate("/rejectOffer")}>Reject</button>
