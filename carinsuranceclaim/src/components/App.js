@@ -31,9 +31,6 @@ function RequireAuth({ children }) {
 const App = () => (
   <BrowserRouter>
     <Header />
-    <nav style={{ marginBottom: "20px" }}>
-      <Link to="/">Home</Link> | <Link to="/details">Car Details</Link> | <Link to="/offers">Offers</Link>
-    </nav>
     <React.Suspense fallback={
       <div className="loader-container">
         <div className="loader-spinner" />
@@ -50,6 +47,11 @@ const App = () => (
         <Route path="/details" element={
           <RequireAuth>
             <Details title="Car Details Page" nextRoute="/policyForm" showBack={true} backRoute="/" />
+          </RequireAuth>
+        } />
+        <Route path="/policyForm" element={
+          <RequireAuth>
+            <PolicyForm />
           </RequireAuth>
         } />
         <Route path="/offers" element={
@@ -77,11 +79,7 @@ const App = () => (
             <ClaimSubmission />
           </RequireAuth>
         } />
-        <Route path="/policyForm" element={
-          <RequireAuth>
-            <PolicyForm />
-          </RequireAuth>
-        } />
+        
       </Routes>
     </React.Suspense>
     <Footer />
