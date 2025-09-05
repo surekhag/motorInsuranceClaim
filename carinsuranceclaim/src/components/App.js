@@ -2,7 +2,7 @@
 
 import React from "react";
 import "../styles/app.scss";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -15,9 +15,18 @@ const Details = React.lazy(() => import("./Details"));
 const RejectOffer = React.lazy(() => import("./RejectOffer"));
 const ClaimSubmission = React.lazy(() => import("./ClaimSubmission"));
 const PolicyForm = React.lazy(() => import("./PolicyForm"));
+const Login = React.lazy(() => import("./Login"));
 
 
-
+// Auth wrapper for protected routes
+function RequireAuth({ children }) {
+  const location = useLocation();
+  const isLoggedIn = sessionStorage.getItem("isLoggedIn") === "true";
+  if (!isLoggedIn) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+  return children;
+}
 
 const App = () => (
   <BrowserRouter>
@@ -32,14 +41,47 @@ const App = () => (
       </div>
     }>
       <Routes>
-        <Route path="/" element={<Home />} />
-  <Route path="/details" element={<Details title="Car Details Page" nextRoute="/policyForm" showBack={true} backRoute="/" />} />
-        <Route path="/offers" element={<Offers />} />
-        <Route path="/acceptOffer" element={<AcceptOffer />} />
-        <Route path="/rejectOffer" element={<RejectOffer />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/claimSubmission" element={<ClaimSubmission />} />
-        <Route path="/policyForm" element={<PolicyForm />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={
+          <RequireAuth>
+            <Home />
+          </RequireAuth>
+        } />
+        <Route path="/details" element={
+          <RequireAuth>
+            <Details title="Car Details Page" nextRoute="/policyForm" showBack={true} backRoute="/" />
+          </RequireAuth>
+        } />
+        <Route path="/offers" element={
+          <RequireAuth>
+            <Offers />
+          </RequireAuth>
+        } />
+        <Route path="/acceptOffer" element={
+          <RequireAuth>
+            <AcceptOffer />
+          </RequireAuth>
+        } />
+        <Route path="/rejectOffer" element={
+          <RequireAuth>
+            <RejectOffer />
+          </RequireAuth>
+        } />
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        } />
+        <Route path="/claimSubmission" element={
+          <RequireAuth>
+            <ClaimSubmission />
+          </RequireAuth>
+        } />
+        <Route path="/policyForm" element={
+          <RequireAuth>
+            <PolicyForm />
+          </RequireAuth>
+        } />
       </Routes>
     </React.Suspense>
     <Footer />

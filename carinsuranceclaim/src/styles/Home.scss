@@ -1,1 +1,18 @@
 /* Styles for Home component */
+
+.home-container {
+	/* Add general container styles if needed */
+}
+
+.home-checkbox-container {
+	margin: 20px 0;
+}
+
+.home-next-btn {
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.home-next-btn.disabled {
+	cursor: not-allowed;
+}
