@@ -1,3 +1,18 @@
+.policyform-row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+.policyform-row .label {
+	min-width: 180px;
+	margin-right: 1rem;
+	text-align: right;
+}
+.policyform-row input,
+.policyform-row textarea {
+	flex: 1;
+	max-width: 400px;
+}
 /* Styles for PolicyForm component */
 
 .policy-upload-status {

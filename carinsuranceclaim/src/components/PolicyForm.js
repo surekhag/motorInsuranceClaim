@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const PolicyForm = () => {
     const [form, setForm] = useState({
         carName: "",
@@ -14,6 +15,7 @@ const PolicyForm = () => {
     });
     const [uploadStatus, setUploadStatus] = useState("");
     const navigate = useNavigate();
+
     // Dummy API call for file upload
     const handleFileUpload = async (e) => {
         const file = e.target.files[0];
@@ -41,39 +43,38 @@ const PolicyForm = () => {
         e.preventDefault();
         // Add dummy claim number
         const claimData = { ...form, claimNumber: "CLM123456" };
-        navigate('/claimSubmission', { state: claimData });
+        navigate("/claimSubmission", { state: claimData });
     };
 
     return (
         <div className="wrapper">
             <h2>Car Accident Details Form</h2>
             <form onSubmit={handleSubmit}>
-                {/* ...existing form fields... */}
-                <div>
+                <div className="policyform-row">
                     <label className="label">Car Name:</label>
                     <input name="carName" value={form.carName} onChange={handleChange} required />
                 </div>
-                <div>
+                <div className="policyform-row">
                     <label className="label">Car Location:</label>
                     <input name="carLocation" value={form.carLocation} onChange={handleChange} required />
                 </div>
-                <div>
+                <div className="policyform-row">
                     <label className="label">Date of Accident:</label>
                     <input type="date" name="accidentDate" value={form.accidentDate} onChange={handleChange} required />
                 </div>
-                <div>
+                <div className="policyform-row">
                     <label className="label">Location of Accident:</label>
                     <input name="accidentLocation" value={form.accidentLocation} onChange={handleChange} required />
                 </div>
-                <div>
+                <div className="policyform-row">
                     <label className="label">Description of Accident:</label>
                     <textarea name="description" value={form.description} onChange={handleChange} required />
                 </div>
-                <div>
+                <div className="policyform-row">
                     <label className="label">Estimated Damage Cost:</label>
                     <input type="number" name="damageEstimate" value={form.damageEstimate} onChange={handleChange} required />
                 </div>
-                <div>
+                <div className="policyform-row">
                     <label className="label">Upload Image/PDF:</label>
                     <input
                         type="file"
@@ -82,7 +83,21 @@ const PolicyForm = () => {
                     />
                     {uploadStatus && <span className="policy-upload-status">{uploadStatus}</span>}
                 </div>
-                <button type="submit">Submit</button>
+                        <div className="buttonWrapper">
+                            <button
+                                type="button"
+                                className="details-btn details-btn--back"
+                                onClick={() => navigate(-1)}
+                            >
+                                Back
+                            </button>
+                            <button
+                                type="submit"
+                                className="details-btn details-btn--next"
+                            >
+                                Next
+                            </button>
+                        </div>
             </form>
         </div>
     );

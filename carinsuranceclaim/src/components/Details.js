@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const Details = ({ title = "Details Page", nextRoute = "/policyForm", showBack = true, backRoute = "/" }) => {
     const navigate = useNavigate();
-    const [loading, setLoading] = useState(true);
     const [userDetails, setUserDetails] = useState({
         userName: "",
         email: "",
@@ -26,7 +25,6 @@ const Details = ({ title = "Details Page", nextRoute = "/policyForm", showBack =
     useEffect(() => {
         // Call dummy API and set state
         setUserDetails(fetchUserDetails());
-        setLoading(false);
     }, []);
 
     return (
@@ -39,8 +37,22 @@ const Details = ({ title = "Details Page", nextRoute = "/policyForm", showBack =
                 <p><span className="label">Home Phone Number:</span> {userDetails.homePhone}</p>
                 <p><span className="label">Policy Number:</span> {userDetails.policyNumber}</p>
             </div>
-            {showBack && <button onClick={() => navigate(backRoute)}>Back</button>}
-            <button onClick={() => navigate(nextRoute)}>Next</button>
+            <div className="buttonWrapper">
+                {showBack && (
+                    <button
+                        className="details-btn details-btn--back"
+                        onClick={() => navigate(backRoute)}
+                    >
+                        Back
+                    </button>
+                )}
+                <button
+                    className="details-btn details-btn--next"
+                    onClick={() => navigate(nextRoute)}
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
 };
