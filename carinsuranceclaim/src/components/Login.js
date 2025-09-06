@@ -8,8 +8,8 @@ const DUMMY_USER = {
 };
 
 const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState(DUMMY_USER.username);
+  const [password, setPassword] = useState(DUMMY_USER.password);
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const Login = () => {
     e.preventDefault();
     if (username === DUMMY_USER.username && password === DUMMY_USER.password) {
       sessionStorage.setItem("isLoggedIn", "true");
-      navigate("/home");
+      navigate("/");
     } else {
       setError("Invalid username or password");
     }
@@ -45,8 +45,8 @@ const Login = () => {
             required
           />
         </div>
-        {error && <div className="login-error">{error}</div>}
-        <button type="submit">Login</button>
+  {error && <div className="login-error">{error}</div>}
+  <button type="submit" className="login-btn">Login</button>
       </form>
     </div>
   );

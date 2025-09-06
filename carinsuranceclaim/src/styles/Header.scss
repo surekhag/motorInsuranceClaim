@@ -1,8 +1,26 @@
 /* Styles for Header component */
 @import './colors.scss';
-header {
+header.header {
   background: $primary-color;
   color: $white;
   padding: 1rem;
+  position: relative;
   text-align: center;
+}
+
+.header__title {
+  margin: 0;
+}
+
+.header__logout-btn {
+  position: absolute;
+  right: 1.25rem;
+  top: 1rem;
+  background: $white;
+  color: $primary-color;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
 }

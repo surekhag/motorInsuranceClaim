@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
     const navigate = useNavigate();
     const [isChecked, setIsChecked] = useState(false);
+
     // Only need to track checkbox now
     useEffect(() => {
         setIsChecked(false);
@@ -37,18 +38,20 @@ const Home = () => {
                         checked={isChecked}
                         onChange={handleCheckboxChange}
                     />
-                    {' '}I have read and agree to the instructions.
+                    {" "}I have read and agree to the instructions.
                 </label>
             </div>
-            <button
-                className={`home-next-btn${isChecked ? '' : ' disabled'}`}
-                onClick={handleNext}
-                disabled={!isChecked}
-            >
-                Next
-            </button>
+            <div className="buttonWrapper">
+                <button
+                    className="details-btn details-btn--next"
+                    onClick={handleNext}
+                    disabled={!isChecked}
+                >
+                    Next
+                </button>
+            </div>
         </div>
     );
-}
+};
 
 export default Home;
