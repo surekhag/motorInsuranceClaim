@@ -1,16 +1,31 @@
 
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import AcceptOffer from "./AccepteOffer";
-import Rejectoffer from "./RejectOffer";
+import RejectOffer from "./RejectOffer";
 
 const Offers = () => {
-    const navigate = useNavigate();
+    const [showAccept, setShowAccept] = useState(false);
+    const [showReject, setShowReject] = useState(false);
+
+    const handleAccept = () => {
+        setShowAccept(true);
+        setShowReject(false);
+    };
+
+    const handleReject = () => {
+        setShowReject(true);
+        setShowAccept(false);
+    };
+
     return (
         <div className="wrapper">
             <h2>Offers Page</h2>
-            <button onClick={() => navigate("/acceptOffer")}>Accept</button>
-            <button onClick={() => navigate("/rejectOffer")}>Reject</button>
+            <div className="buttonWrapper">
+                <button className="details-btn details-btn--next" onClick={handleAccept}>Accept</button>
+                <button className="details-btn details-btn--back" onClick={handleReject}>Reject</button>
+            </div>
+            {showAccept && <AcceptOffer />}
+            {showReject && <RejectOffer />}
         </div>
     );
 };
