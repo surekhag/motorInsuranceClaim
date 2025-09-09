@@ -1,7 +1,22 @@
-// Common color variables
-$primary-color: #007bff;
+$danger-red: #d9534f; // Used for reject/danger actions
+// Allianz-inspired professional palette
+$primary-color: #0057b8; // Deep blue for header
+$accent-blue: #0071ce;   // Accent blue
 $white: #fff;
-$footer-bg: #f1f1f1;
+$footer-bg: #e2e6ed;     // Slightly darker grey for footer
+$background-light: #f4f6fb;
 $text-dark: #333;
+$text-light: #fff;
+$accent-yellow: #ffd200;
 $loader-border: #ccc;
-$loader-text: #007bff;
+$loader-text: #0057b8;
+
+$home-btn-shadow: 0 1px 4px rgba(0,87,184,0.08);
+$home-container-shadow: 0 2px 8px rgba(0,87,184,0.06);
+$home-btn-disabled-bg: #ccc;
+$home-btn-disabled-color: #888;
+$policy-input-border: #d1d5db;
+$policy-upload-success: #2e7d32;
+$offer-card-shadow: 0 1px 4px rgba(0,0,0,0.04);
+
+$login-btn-shadow: 0 1px 4px rgba(0,87,184,0.08);

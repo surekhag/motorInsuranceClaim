@@ -1,1 +1,28 @@
+
+@import './colors.scss';
+.claim-submission__main-container input,
+.claim-submission__main-container textarea {
+	width: 18rem;
+	max-width: 400px;
+	padding: 0.75rem 1rem;
+	border: 1px solid $policy-input-border;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	background: $white;
+	font-family: 'Roboto', Arial, sans-serif;
+	transition: border 0.2s;
+}
+/* Add padding to main container */
+.claim-submission__main-container {
+	padding: 2rem 3rem;
+	background: $background-light;
+	border-radius: 1rem;
+	box-shadow: 0 2px 8px rgba(0,87,184,0.06);
+	margin: 2rem auto;
+	max-width: 800px;
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	align-items: center;
+	gap: 1.5rem;
+}
 /* Styles for ClaimSubmission component */
