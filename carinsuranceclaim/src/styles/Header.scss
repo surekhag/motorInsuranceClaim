@@ -1,26 +1,42 @@
-/* Styles for Header component */
 @import './colors.scss';
+/* Styles for Header component */
 header.header {
   background: $primary-color;
   color: $white;
-  padding: 1rem;
+  padding: 1.25rem 3rem 1rem 3rem;
   position: relative;
   text-align: center;
+  box-shadow: $home-container-shadow;
+  border-bottom: 3px solid $accent-blue;
 }
 
 .header__title {
   margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: $white;
+  text-shadow: 0 1px 4px rgba(0,87,184,0.10);
 }
 
 .header__logout-btn {
   position: absolute;
-  right: 1.25rem;
-  top: 1rem;
+  right: 2rem;
+  top: 1.25rem;
   background: $white;
   color: $primary-color;
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
+  border: 2px solid $primary-color;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.25rem;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: $home-btn-shadow;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+
+.header__logout-btn:hover {
+  background: $accent-blue;
+  color: $white;
+  border-color: $accent-blue;
 }

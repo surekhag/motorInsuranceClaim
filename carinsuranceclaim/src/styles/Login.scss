@@ -1,19 +1,47 @@
+@import './colors.scss';
+
+@import './colors.scss';
+form input,
+form textarea {
+  width: 18rem;
+  max-width: 400px;
+  padding: 0.75rem 1rem;
+  border: 1px solid $policy-input-border;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: $white;
+  font-family: 'Roboto', Arial, sans-serif;
+  transition: border 0.2s;
+}
+form > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+.login-container {
+  padding-left: 2rem;
+}
+
 .login-btn {
-  background: #007bff;
-  color: #fff;
+  background: $accent-blue;
+  color: $white;
   border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: $login-btn-shadow;
   transition: background 0.2s, color 0.2s;
+  margin: 1.5rem 0 1rem 0;
 }
 .login-btn:hover {
-  background: #0056b3;
+  background: $primary-color;
 }
 .login-error {
-  color: #d32f2f;
+  color: $accent-yellow;
   font-weight: 600;
   margin-top: 8px;
 }

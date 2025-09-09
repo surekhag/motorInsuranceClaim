@@ -1,1 +1,63 @@
-/* Styles for Offers component */
+
+@import './colors.scss';
+.offer-details input,
+.offer-details textarea {
+	width: 18rem;
+	max-width: 400px;
+	padding: 0.75rem 1rem;
+	border: 1px solid $policy-input-border;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	background: $white;
+	font-family: 'Roboto', Arial, sans-serif;
+	transition: border 0.2s;
+}
+
+.offers-container {
+	max-width: 700px;
+	margin: 2rem auto;
+	background: $background-light;
+	border-radius: 1rem;
+	box-shadow: 0 2px 8px rgba(0,87,184,0.08);
+	padding: 2rem 3rem;
+}
+	background: $white;
+	border-radius: 0.75rem;
+	padding: 1.5rem;
+	margin-bottom: 1.5rem;
+	box-shadow: $offer-card-shadow;
+}
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: $primary-color;
+	margin-bottom: 0.5rem;
+}
+.offer-details {
+	margin-bottom: 1rem;
+	color: $text-dark;
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	align-items: center;
+	gap: 1.5rem;
+}
+.offer-actions {
+	display: flex;
+	gap: 1rem;
+}
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.5rem;
+	border: none;
+	font-weight: 600;
+	font-size: 1rem;
+	cursor: pointer;
+	background: $primary-color;
+	color: $white;
+	transition: background 0.2s;
+	box-shadow: $home-btn-shadow;
+}
+	background: $accent-yellow;
+	color: $text-dark;
+}
+.offer-btn:hover {
+	background: $accent-blue;
+}

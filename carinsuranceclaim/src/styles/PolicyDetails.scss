@@ -1,1 +1,6 @@
-/* Styles for PolicyDetails component */
+@import './colors.scss';
+	background: $background-light;
+	border-radius: 1rem;
+	box-shadow: $home-container-shadow;
+	padding: 2rem 3rem;
+}
